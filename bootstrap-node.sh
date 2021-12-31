@@ -5,3 +5,4 @@ cat >> /etc/hosts <<-EOL
 192.168.29.2  Web1.demo.com
 192.168.29.3  Web2.demo.com
 192.168.29.4  ansible-host
+EOL

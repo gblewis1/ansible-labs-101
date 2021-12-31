@@ -30,10 +30,9 @@ Vagrant.configure("2") do |config|
   # Provision each of the VMs.
   boxes.each do |opts|
     config.vm.define opts[:name] do |config|
-#   Only Enable this if you are connecting to Proxy server
-#      config.proxy.http     = "http://usernam:password@x.y:80"
-#      config.proxy.https    = "http://usernam:password@x.y:80"
-#      config.proxy.no_proxy = "localhost,127.0.0.1"
+      config.proxy.http     = "http://proxy-dmz.intel.com:911/"
+      config.proxy.https    = "http://proxy-dmz.intel.com:911/"
+      config.proxy.no_proxy = "localhost,127.0.0.1"
       config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", disabled: true
       config.ssh.insert_key = false
       config.vm.box = opts[:box]
